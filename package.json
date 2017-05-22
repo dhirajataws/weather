@@ -12,7 +12,7 @@
   "dependencies": {
     "axios": "^0.8.0",
     "history": "^1.13.1",
-    "react": "^15.3.2",
+    "react": "^15.4.0",
     "react-dom": "^15.5.4",
     "react-geolocated": "^1.0.3",
     "react-redux": "^5.0.3",

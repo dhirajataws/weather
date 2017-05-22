@@ -1,4 +1,26 @@
 
+Requirements
+Create a “weather widget” editor that allows users to set up a widget that can then be embedded on any site.
+
+Editor
+The widget editor must have a form to allow a user to create a new widget. This form must include the following fields:
+
+Title
+Unit: metric or imperial
+Show Wind: true or false
+The widget editor must also display a list of already created widgets with their title and a snippet of code that allows that widget to be embedded.
+
+Widget
+The widget itself should be a piece of Javascript that reads the end user’s current location using navigator.geolocation, and retrieves the current weather conditions for that location using the Open Weather Map API.
+
+The data the widget displays is determined by the settings in the editor; i.e. if I created a widget called “Imperial with Wind Data” and chose imperial units, and Show Wind, I should be able to embed that widget and see those two options reflected in the widget display.
+
+Demo:
+The application is deployed at
+http://dhirajjenkinss3bucket.s3-website-us-east-1.amazonaws.com/reactapp/index.html
+
+The above url is not able to fetch data from weather api in cloud. Needs cloud configured.
+
 Description:
 The Weather widget is created using React-Redux and React-thunk like middleware concepts. Concepts like Controlled
 components, presentational or dump components are used as per needs. Features of both ES5 and ES6 are used
@@ -12,6 +34,7 @@ steps followed are :
 4. reducers, actions, smart and dump components are identified.
 5. Test cases written
 6. Components writtend and tested
+7. Few warnings around use of PropTypes
 
 Build the application:
 To build a production version use:
@@ -23,8 +46,20 @@ npm install
 npm start
 or webpack
 
+port used is 8090
+
 To run unit test:
 npm test
+
+To deploy the application in cloud
+
+after the build is done, the public folder and index.html needs to be send to s3 with below command lines.
+
+aws s3 sync /Users/dhiraj.kumar/weather_test/weather/build/public s3://dhirajjenkinss3bucket/reactapp/public
+
+aws s3 cp  /Users/dhiraj.kumar/weather_test/weather/build/index.html s3://dhirajjenkinss3bucket/reactapp/index.html;
+
+s3 react app url http://dhirajjenkinss3bucket.s3-website-us-east-1.amazonaws.com/reactapp/index.html
 
 Limitation:
 

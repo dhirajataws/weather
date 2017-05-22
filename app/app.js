@@ -2,7 +2,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import appReducer from './reducers'
 import { Router, browserHistory } from 'react-router';
-
+import React from 'react';
 var ReactDOM = require('react-dom');
 var routes = require('./config/routes');
 
